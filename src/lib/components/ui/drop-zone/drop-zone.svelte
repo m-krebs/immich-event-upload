@@ -1,0 +1,61 @@
+<script lang="ts">
+	const dropHandler = () => {
+		// TODO: implement
+	};
+</script>
+
+<label id="drop-zone" ondrop={dropHandler}>
+	Drop images here, or click to upload.
+	<input type="file" id="file-input" multiple accept="image/*" />
+</label>
+<ul id="preview"></ul>
+<button id="clear-btn">Clear</button>
+
+<style>
+	body {
+		font-family: 'Arial', sans-serif;
+	}
+
+	#drop-zone {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 500px;
+		max-width: 100%;
+		height: 200px;
+		padding: 1em;
+		border: 1px solid #cccccc;
+		border-radius: 4px;
+		color: slategray;
+		cursor: pointer;
+	}
+
+	#file-input {
+		display: none;
+	}
+
+	#preview {
+		width: 500px;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		list-style: none;
+		padding: 0;
+	}
+
+	#preview li {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		margin: 0;
+		width: 100%;
+		height: 100px;
+	}
+
+	#preview img {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+	}
+</style>
