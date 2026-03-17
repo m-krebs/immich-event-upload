@@ -1,5 +1,4 @@
-ignoredBuiltDependencies:
-  - '@prisma/client'
-onlyBuiltDependencies:
-  - better-sqlite3
-  - esbuild
+allowBuilds:
+  '@prisma/client': false
+  better-sqlite3: true
+  esbuild: false
