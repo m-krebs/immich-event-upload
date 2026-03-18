@@ -1,17 +1,20 @@
 FROM node:24 AS build
 
-RUN npm install -g pnpm@10.32.1
-
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN corepack enable && pnpm install --frozen-lockfile
 
 COPY . .
 RUN pnpm build
 
-FROM node:24
+FROM node:24-alpine
 
-COPY --from=build /app/build/ /app
+WORKDIR /app
 
-CMD [ "node", "app/" ]
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY --from=build /app/build/ .
+
+RUN corepack enable && pnpm install --prod
+
+CMD [ "node", "index.js" ]
