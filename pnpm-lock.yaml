@@ -57,6 +57,9 @@ importers:
       drizzle-seed:
         specifier: ^0.3.1
         version: 0.3.1(drizzle-orm@0.45.1(@prisma/client@5.22.0)(@types/better-sqlite3@7.6.13)(@types/pg@8.18.0)(better-sqlite3@12.8.0)(kysely@0.28.12)(pg@8.20.0))
+      lucide-svelte:
+        specifier: ^0.577.0
+        version: 0.577.0(svelte@5.53.12)
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -90,6 +93,9 @@ importers:
       vite:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.31.1)
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
 
 packages:
 
@@ -1885,6 +1891,11 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lucide-svelte@0.577.0:
+    resolution: {integrity: sha512-0i88o57KsaHWnc80J57fY99CWzlZsSdtH5kKjLUJa7z8dum/9/AbINNLzJ7NiRFUdOgMnfAmJt8jFbW2zeC5qQ==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -3756,6 +3767,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-svelte@0.577.0(svelte@5.53.12):
+    dependencies:
+      svelte: 5.53.12
 
   magic-string@0.30.21:
     dependencies:
