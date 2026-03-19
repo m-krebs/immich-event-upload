@@ -1,14 +1,22 @@
 <script lang="ts">
+	import Button from '$lib/components/ui/button/button.svelte';
 	import type { PageProps } from './$types';
+
+	import Plus from '@lucide/svelte/icons/plus';
 
 	console.log('Hello admin');
 
 	let { data }: PageProps = $props();
 </script>
 
-Admin page
+<h1 class="text-xl">Administration</h1>
 
-<h2>Active</h2>
+<div class="flex flex-row justify-between">
+	<h2 class="text-lg">Rooms</h2>
+	<Button variant="link" href="/admin/room/new">Create new <Plus /></Button>
+</div>
+
+<h3>Active</h3>
 <div class="flex w-full">
 	{#each data.rooms as room, id}
 		<a
@@ -19,4 +27,4 @@ Admin page
 	{/each}
 </div>
 
-<h2>Inactive</h2>
+<h3>Inactive</h3>
