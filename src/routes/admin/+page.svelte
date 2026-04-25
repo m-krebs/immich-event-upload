@@ -7,6 +7,10 @@
 	import { zod4Client } from 'sveltekit-superforms/adapters';
 	import type { PageProps } from './$types';
 
+	import Button from '$lib/components/ui/button/button.svelte';
+
+	import Plus from '@lucide/svelte/icons/plus';
+
 	let { data }: PageProps = $props();
 
 	// const createRoom = () => {};
@@ -18,22 +22,14 @@
 	// const { form: formData, enhance } = form;
 </script>
 
-Admin page
+<h1 class="text-xl">Administration</h1>
 
-<!-- <form method="POST" use:enhance> -->
-<!-- 	<Form.Field {form} name="title"> -->
-<!-- 		<Form.Control> -->
-<!-- 			{#snippet children({ props })} -->
-<!-- 				<Form.Label>Title</Form.Label> -->
-<!-- 				<Input {...props} bind:value={$formData.title} /> -->
-<!-- 			{/snippet} -->
-<!-- 		</Form.Control> -->
-<!-- 		<Form.Description /> -->
-<!-- 		<Form.FieldErrors /> -->
-<!-- 	</Form.Field> -->
-<!-- </form> -->
+<div class="flex flex-row justify-between">
+	<h2 class="text-lg">Rooms</h2>
+	<Button variant="link" href="/admin/room/new">Create new <Plus /></Button>
+</div>
 
-<h2>Active</h2>
+<h3>Active</h3>
 <div class="flex w-full">
 	{#each data.rooms as room, id}
 		<a
@@ -44,4 +40,4 @@ Admin page
 	{/each}
 </div>
 
-<h2>Inactive</h2>
+<h3>Inactive</h3>
